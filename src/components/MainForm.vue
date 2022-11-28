@@ -15,7 +15,7 @@
             <div class="select-document-block" v-show="store.selectedDocument === null">
                 <p>Выберите документ, чтобы посмотреть его содержимое</p>
             </div>
-            <div class="selected-document-block" v-if="store.selectedDocument !== null">
+            <div class="selected-document-block" v-if="store.selectedDocument">
                 <div class="document-img">
                     <img width="424" v-if="store.selectedDocument.image === null" :src="image" alt="">
                     <img width="424" v-if="store.selectedDocument.image !== null" :src="store.selectedDocument.image" alt="">

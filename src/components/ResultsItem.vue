@@ -6,7 +6,7 @@
         </div>
         <div class="document-name">
             <h2>{{ name }}</h2>
-            <p>12 MB</p>
+            <span>12 MB</span>
         </div>
     </div>
 </template>
@@ -29,7 +29,9 @@
             const store = useDocumentsStore()
 
             const setupDocument = (event) => {
+                console.log(event.target)
                 const documentIndex = event.target.getAttribute('index')
+                //console.log(documentIndex)
                 store.selectDocument(documentIndex)
             }
 
@@ -56,9 +58,11 @@
 
     .document-name {
         padding: 15px;
+        pointer-events: none;
     }
 
-    .document-name p {
+    .document-name span {
+        font-family: 'Montserrat', sans-serif;
         font-weight: 400;
         font-size: 14px;
         line-height: 17px;
@@ -68,6 +72,7 @@
     .image-block {
         width: 30%;
         height: 100%;
+        pointer-events: none;
     }
 
     .image-block img {
